@@ -9,6 +9,7 @@ public class P003_TwoSum2_InputArrayIsSorted {
         int i = 0, j = nums.length - 1;
         while (i < j) {
             if (nums[i] + nums[j] == target) return new int[]{i + 1, j + 1};
+            //i最小时，nums[i] + nums[j]仍比target要大，说明需要左移j
             else if (nums[i] + nums[j] > target) --j;
             else ++i;
         }
